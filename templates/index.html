@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection - Abhay's Project</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #2980B9, #6DD5FA, #FFFFFF); /* Gradient Background */
+            background-size: 300% 300%;
+            animation: gradientAnimation 12s ease infinite;
+            color: #333; /* Darker text for better contrast */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Use min-height to ensure full viewport coverage */
+            text-align: center;
+            overflow: hidden; /* Hide scrolling */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-size: 3.0rem; /* Slightly larger */
+            margin-bottom: 15px;
+            font-weight: 700; /* Bold */
+            color: #2C3E50; /* Darker heading color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #34495E;
+            font-weight: 500;
+            margin-top: 5px;
+            margin-bottom: 25px; /* Added margin */
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+            display: inline-block;
+            width: 100%;
+            max-width: 550px; /* Slightly wider */
+            transition: transform 0.3s ease; /* Smooth transform */
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+
+        input[type="file"] {
+            padding: 14px;
+            margin-bottom: 25px;
+            width: 100%;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            border: 2px solid #BDC3C7; /* Muted border */
+            color: #333;
+            background-color: #ECF0F1; /* Light background */
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="file"]:focus {
+            border-color: #3498DB; /* Highlight color */
+            outline: none; /* Remove default focus outline */
+        }
+
+        button {
+            padding: 16px 30px;
+            font-size: 1.2rem;
+            background-color: #3498DB; /* Primary button color */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Button shadow */
+        }
+
+        button:hover {
+            background-color: #2980B9; /* Darker shade on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        button:active {
+            transform: translateY(0); /* No lift when active */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); /* Reduced shadow when active */
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #777; /* Muted footer color */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* Subtle text shadow */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            input[type="file"] {
+                width: 85%;
+            }
+
+            button {
+                font-size: 1.1rem;
+            }
+
+            .form-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Object Detection - Abhay's Project</h1>
+    <h2>Upload Image or Video for Object Detection</h2>
+    <div class="form-container">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*,video/*" required>
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    <footer>
+        <p>Developed by <strong>Abhay</strong> | Object Detection Project</p>
+    </footer>
+</body>
+
+</html>
